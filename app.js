@@ -42,7 +42,7 @@ app.use(express.json());
 // connect to MongoDB through mongoose
 mongoose
   .connect(
-    'mongodb+srv://anuch:j0iLuClecIyE2Iy9@cluster0.4wuv4h7.mongodb.net/recordShop'
+    'mongodb+srv://anuch:j0iLuClecIyE2Iy9@cluster0.4wuv4h7.mongodb.net/record-shop'
   )
   .then(() => console.log('connected to DB'))
   .catch((err) => console.log(err));
