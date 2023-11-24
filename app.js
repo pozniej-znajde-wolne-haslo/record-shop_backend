@@ -52,8 +52,7 @@ app.options('*', cors());
 //  origin: 'https://record-shop-frontend-zcy0.onrender.com' ????
 app.use(
   cors({
-    origin:
-      'https://record-shop-frontend-zcy0.onrender.com/api/records/allrecords',
+    origin: 'https://record-shop-frontend-zcy0.onrender.com',
     //allowHeaders: ['Content-Type', 'Authorization'],
     // methods: 'GET,POST,PATCH,PUT,DELETE',
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
