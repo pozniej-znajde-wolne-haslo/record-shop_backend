@@ -48,22 +48,21 @@ mongoose
   .catch((err) => console.log(err));
 
 // cors middleware
-//app.options('*', cors());
-
-/* app.use(
+app.use(
   cors({
     origin: 'https://record-shop-frontend-zcy0.onrender.com',
     //allowHeaders: ['Content-Type', 'Authorization'],
     // methods: 'GET,POST,PATCH,PUT,DELETE',
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     exposedHeaders: ['token'],
-    credentials: true,
+    //credentials: true,
     //preflightContinue: true,
   })
-); */ // so u can read TOKEN in react
-//app.options('*', cors());
+);
 
-app.use((req, res, next) => {
+app.options('*', cors());
+
+/* app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Origin',
     'https://record-shop-frontend-zcy0.onrender.com'
@@ -75,10 +74,10 @@ app.use((req, res, next) => {
     'PUT',
     'DELETE',
   ]);
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Headers', ['Content-Type', 'Authorization']);
   res.header('Access-Control-Expose-Headers', 'token');
   next();
-});
+}); */
 
 // middleware morgan
 // each time u make REQ, it logs the method & time of your REQ
