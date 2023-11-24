@@ -62,6 +62,13 @@ app.use(
   })
 ); // so u can read TOKEN in react
 //app.options('*', cors());
+app.use((req, res, next) => {
+  res.header(
+    'Access-Control-Allow-Origin',
+    'https://record-shop-frontend-zcy0.onrender.com'
+  );
+  next();
+});
 
 // middleware morgan
 // each time u make REQ, it logs the method & time of your REQ
@@ -71,7 +78,7 @@ app.use(morgan('tiny'));
 // like middleware, to handle the REQ & send them to a specific route
 // --API-- used, whenever u work with REST-API
 // localhost:8000/api/users
-app.use('/api/users', cors(), usersRoutes);
+app.use('/api/users', usersRoutes);
 // localhost:8000/api/records
 app.use('/api/records', recordsRoutes);
 // localhost:8000/api/orders
