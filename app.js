@@ -71,7 +71,7 @@ app.use(morgan('tiny'));
 // like middleware, to handle the REQ & send them to a specific route
 // --API-- used, whenever u work with REST-API
 // localhost:8000/api/users
-app.use('/api/users', usersRoutes);
+app.use('/api/users', cors(), usersRoutes);
 // localhost:8000/api/records
 app.use('/api/records', recordsRoutes);
 // localhost:8000/api/orders
