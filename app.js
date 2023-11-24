@@ -48,9 +48,9 @@ mongoose
   .catch((err) => console.log(err));
 
 // cors middleware
-app.options('*', cors());
-//  origin: 'https://record-shop-frontend-zcy0.onrender.com' ????
-app.use(
+//app.options('*', cors());
+
+/* app.use(
   cors({
     origin: 'https://record-shop-frontend-zcy0.onrender.com',
     //allowHeaders: ['Content-Type', 'Authorization'],
@@ -58,15 +58,25 @@ app.use(
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     exposedHeaders: ['token'],
     credentials: true,
-    preflightContinue: true,
+    //preflightContinue: true,
   })
-); // so u can read TOKEN in react
+); */ // so u can read TOKEN in react
 //app.options('*', cors());
+
 app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Origin',
     'https://record-shop-frontend-zcy0.onrender.com'
   );
+  res.header('Access-Control-Allow-Methods', [
+    'GET',
+    'POST',
+    'PATCH',
+    'PUT',
+    'DELETE',
+  ]);
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Expose-Headers', 'token');
   next();
 });
 
