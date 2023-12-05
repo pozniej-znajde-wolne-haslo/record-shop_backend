@@ -48,7 +48,7 @@ mongoose
   .catch((err) => console.log(err));
 
 // cors middleware
-app.use(
+/* app.use(
   cors({
     origin: 'https://record-shop-frontend-zcy0.onrender.com',
     //allowHeaders: ['Content-Type', 'Authorization'],
@@ -58,11 +58,11 @@ app.use(
     //credentials: true,
     //preflightContinue: true,
   })
-);
+); */
 
-app.options('*', cors());
+//app.options('*', cors());
 
-/* app.use((req, res, next) => {
+app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Origin',
     'https://record-shop-frontend-zcy0.onrender.com'
@@ -77,7 +77,7 @@ app.options('*', cors());
   res.header('Access-Control-Allow-Headers', ['Content-Type', 'Authorization']);
   res.header('Access-Control-Expose-Headers', 'token');
   next();
-}); */
+});
 
 // middleware morgan
 // each time u make REQ, it logs the method & time of your REQ
