@@ -98,18 +98,19 @@ mongoose
   next();
 }); */
 
-app.use(
+/* app.use(
   cors({
     origin: 'https://record-shop-frontend-zcy0.onrender.com',
     headers: ['Content-Type', 'token', 'Access-Control-Allow-Origin'],
     credentials: true,
   })
 );
-
+ */
 // middleware morgan
 // each time u make REQ, it logs the method & time of your REQ
 app.use(morgan('tiny'));
 
+app.use(express.static('./views/dist'));
 // the routers
 // like middleware, to handle the REQ & send them to a specific route
 // --API-- used, whenever u work with REST-API
