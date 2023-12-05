@@ -51,9 +51,9 @@ export const login = async (req, res, next) => {
       if (check) {
         // AUTHENTICATION PROCESS (SIGN method 2 create a TOKEN)
         const token = jwt.sign(
-          { id: foundUser._id, email: foundUser.email },
+          { id: foundUser._id, email: foundUser.email }, // _id ??
           process.env.SECRET_KEY, // can set anything as its value in the --/.ENV/-- file
-          { issuer: 'Naqvi', expiresIn: '2y' }
+          { issuer: 'Naqvi', expiresIn: '2d' }
         );
         // ***** jwt.sign({ paylodad }, secret key, { other options }) *****
         // payload - data displayed on top, can be 1 or more value, but has 2 b an OBJ
@@ -102,6 +102,7 @@ export const login = async (req, res, next) => {
     }
   } catch (error) {
     next(err); // it notifies the ERROR HANDLER from the APP.JS
+    // or errOR ??!!
   }
 };
 

@@ -53,7 +53,7 @@ app.use(
     origin: 'https://record-shop-frontend-zcy0.onrender.com',
     //allowHeaders: ['Content-Type', 'Authorization'],
     // methods: 'GET,POST,PATCH,PUT,DELETE',
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
     exposedHeaders: ['token'],
     //credentials: true,
     //preflightContinue: true,
