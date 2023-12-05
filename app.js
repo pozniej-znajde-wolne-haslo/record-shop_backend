@@ -79,7 +79,7 @@ mongoose
   next();
 }); */
 
-app.use(function (req, res, next) {
+/* app.use(function (req, res, next) {
   // res.header("Access-Control-Allow-Origin", "*");
   const allowedOrigins = [
     'http://localhost:8000',
@@ -96,7 +96,15 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-credentials', true);
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, UPDATE');
   next();
-});
+}); */
+
+app.use(
+  cors({
+    origin: 'https://record-shop-frontend-zcy0.onrender.com',
+    headers: ['Content-Type', 'token', 'Access-Control-Allow-Origin'],
+    credentials: true,
+  })
+);
 
 // middleware morgan
 // each time u make REQ, it logs the method & time of your REQ
